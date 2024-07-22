@@ -119,6 +119,9 @@ local mac_keys = {
       mods = mod.SUPER_REV,
       action = act.SplitHorizontal({ domain = 'CurrentPaneDomain' }),
    },
+
+   -- Quit --
+   { key = 'q',          mods = mod.SUPER, action = act.QuitApplication },
 }
 
 local mouse_bindings = {
