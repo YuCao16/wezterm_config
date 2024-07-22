@@ -17,7 +17,7 @@ local __cells__ = {} -- wezterm FormatItems (ref: https://wezfurlong.org/wezterm
 local colors = {
    default   = { bg = '#45475a', fg = '#1c1b19' },
    is_active = { bg = '#7FB4CA', fg = '#11111b' },
-   hover     = { bg = '#587d8c', fg = '#1c1b19' },
+   hover     = { bg = '#b3bbc4', fg = '#1c1b19' },
 }
 
 local _set_process_name = function(s)
@@ -27,7 +27,7 @@ end
 
 local _set_title = function(process_name, base_title, max_width, inset)
    local title
-   inset = inset or 6
+   inset = inset or 4
 
    if process_name:len() > 0 then
       title = process_name .. ' ~ ' .. base_title
@@ -82,14 +82,6 @@ M.setup = function()
          fg = colors.default.fg
       end
 
-      local has_unseen_output = false
-      for _, pane in ipairs(tab.panes) do
-         if pane.has_unseen_output then
-            has_unseen_output = true
-            break
-         end
-      end
-
       -- Left semi-circle
       _push('rgba(0, 0, 0, 0.4)', bg, { Intensity = 'Bold' }, GLYPH_SEMI_CIRCLE_LEFT)
 
@@ -100,11 +92,6 @@ M.setup = function()
 
       -- Title
       _push(bg, fg, { Intensity = 'Bold' }, ' ' .. title)
-
-      -- Unseen output alert
-      -- if has_unseen_output then
-      --    _push(bg, '#FFA066', { Intensity = 'Bold' }, ' ' .. GLYPH_CIRCLE)
-      -- end
 
       -- Right padding
       _push(bg, fg, { Intensity = 'Bold' }, ' ')

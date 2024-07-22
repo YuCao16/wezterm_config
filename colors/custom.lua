@@ -14,8 +14,8 @@ M.colorscheme = function(color_scheme)
    return {
       foreground = colors.foreground,
       background = colors.background,
-      cursor_bg = colors.cursor_bg,
-      cursor_border = colors.cursor_border,
+      cursor_bg = '#4273ff',
+      cursor_border = '#4273ff',
       cursor_fg = colors.cursor_fg,
       selection_bg = colors.selection_bg,
       selection_fg = colors.selection_fg,
