@@ -5,6 +5,7 @@ return {
    exit_behavior_messaging = 'Verbose',
    status_update_interval = 1000,
    term = 'wezterm',
+   skip_close_confirmation_for_processes_named = {},
 
    scrollback_lines = 5000,
 
